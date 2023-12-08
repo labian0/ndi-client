@@ -10,7 +10,7 @@ export default function Cellule(props){
     ]
     return(
         <div className="cell">
-            <img src={Ph} alt=""/>
+            <p>{props.nature}</p>
         </div>
     )
 }
