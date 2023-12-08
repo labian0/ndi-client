@@ -3,12 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter,RouterProvider} from "react-router-dom";
+import Plateau from "./Components/Game/Plateau";
+import Login from "./Components/Routes/Login";
+import Register from "./Components/Routes/Register";
+
+const router = createBrowserRouter([
+    {
+        path:"/",
+        element: <App/>
+    },
+    {
+        path:"/login",
+        element : <Login/>
+    },
+    {
+        path:"/plateau",
+        element: <Plateau/>
+    },
+    {
+        path:"/register",
+        element: <Register/>
+    }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <RouterProvider router={router}/>
 );
 
 // If you want to start measuring performance in your app, pass a function

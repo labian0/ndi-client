@@ -1,0 +1,12 @@
+.plateau{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.cell{
+    border: 1px solid black;
+    margin: 1px;
+}
