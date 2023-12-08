@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>page de connection</title>
+    <style>
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        margin: 0;
+      }
+      #main-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        width: 50%;
+        margin-inline: 25%;
+        height: 100%;
+      }
+      header h2{
+        text-align: center;
+      }
+      #login-form{
+        text-align: center;
+      }
+    </style>
 </head>
 <body>
-    
+  <div id="main-wrapper">
+    <header>
+      <h2>Jeu</h2>
+    </header>
+<div id="login-form">
 <form action="action_page.php" method="post">
     <div class="container">
       <input type="text" placeholder="Nom d'utilisateur" name="uname" required>
@@ -15,5 +43,10 @@
       <button type="submit">se connecter</button>
     </div>
   </form> 
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus consectetur perferendis perspiciatis necessitatibus ex quibusdam. Repellat vitae, nihil natus repellendus consequatur quis odio quasi, perferendis assumenda tempora, recusandae architecto doloribus!
+  </p>
+</div>
+</div>
 </body>
 </html>
