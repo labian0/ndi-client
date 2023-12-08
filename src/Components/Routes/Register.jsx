@@ -9,19 +9,22 @@ export default function Register() {
 
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
+
+    const [confirmModal,setConfirmModal] = useState(false);
+    const [registerClicked,setRegisterClicked] = useState(false);
     const getToken = (e) => {
         e.preventDefault();
         Axios.post("http://91.92.252.31:5000/register",
             `username=${userName}&password=${password}`
         ).then(res => {
-            cookies.set('access-token',res.data.session_token,{
-                path:'*',
-                httpOnly : true,
-                secure : true
-            })
-        }).catch(
-
-        )
+            if(res.status == 200){
+                setConfirmModal(true);
+            }else{
+                setConfirmModal(false);
+            }
+        }).catch((err)=>{
+            console.log(err)
+        });
     }
     return (
         <div className="form-container">
@@ -32,7 +35,8 @@ export default function Register() {
                 <label htmlFor="password">Mot de passe :</label>
                 <input type="password" id="password" value={password} name="password"
                        onChange={(e) => setPassword(e.target.value)}/>
-                <button>Se connecter</button>
+                <button onClick={() => setRegisterClicked(true)}>Se connecter</button>
+                {(confirmModal && registerClicked) ? <div className={'register-modal'}><p>Inscris avec succès !</p></div> : <div className={'register-error'}><p>Un problème est survenu !</p></div>}
             </form>
         </div>
     )

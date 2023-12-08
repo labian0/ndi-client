@@ -9,11 +9,13 @@ export default function Plateau() {
     ]);
 
     useEffect(() => {
-        Axios.get("http://91.92.252.31:5000/plateau_golmon")
+        Axios.post("http://91.92.252.31:5000/init_plateau",`session_token=${localStorage.getItem('token')}`)
             .then(res => {
                 setElements(res.data.mat);
             })
     }, []);
+
+
 
     return (
         <div className="plateau">

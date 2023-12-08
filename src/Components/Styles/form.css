@@ -8,3 +8,19 @@ body{
     justify-content: center;
     align-items: center;
 }
+.register-modal p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color : #39b311;
+    color: #102602;
+    padding: 1rem;
+}
+.register-error p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f81212;
+    color: #2d0202;
+    padding: 1rem;
+}
